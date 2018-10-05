@@ -4,6 +4,7 @@ clear all
 % Condiciones Iniciales
 x0=1;
 y0=2;
+
 % EDOs
 % DSOLVE
 syms x(t) y(t)
@@ -29,3 +30,5 @@ plot(t,S(:,2))
 title('y(t)')
 xlabel('t')
 ylabel('y(t)')
+
+

@@ -48,7 +48,7 @@ xlabel('x(t)')
 ylabel('y(t)')
 
 % Var de Parametros
-time = 0:0.1:10;
+time = t;
 figure
 plot(var1(time),var2(time))
 title('Trayectoria analitica')
@@ -56,14 +56,14 @@ xlabel('x(t)')
 ylabel('y(t)')
 
 % Comparacion
+comp = (S(:,1)-var1(time)).^2 + (S(:,2)-var2(time)).^2;
+
 figure
 hold on
-plot(S(:,1),S(:,2),'r')
-plot(var1(time),var2(time),'b')
+plot(time, comp)
 title('Comparacion')
-xlabel('x(t)')
-ylabel('y(t)')
-legend(["bla","blabla"])
+xlabel('t')
+ylabel('error')
 hold off
 
 
