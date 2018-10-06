@@ -43,7 +43,7 @@ ylabel('y(t)')
 
 figure
 plot(S(:,1),S(:,2))
-title('Trayectoria numerica')
+title('Trayectoria numerica u(t)=1')
 xlabel('x(t)')
 ylabel('y(t)')
 
@@ -51,7 +51,7 @@ ylabel('y(t)')
 time = t;
 figure
 plot(var1(time),var2(time))
-title('Trayectoria analitica')
+title('Trayectoria analitica u(t)=1')
 xlabel('x(t)')
 ylabel('y(t)')
 
@@ -61,7 +61,7 @@ comp = (S(:,1)-var1(time)).^2 + (S(:,2)-var2(time)).^2;
 figure
 hold on
 plot(time, comp)
-title('Comparacion')
+title('Comparacion u(t)=1)')
 xlabel('t')
 ylabel('error')
 hold off
