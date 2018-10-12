@@ -8,9 +8,9 @@ A=[0 1; -3 0]; B=[0; 2];
 x0=[0;0];
 
 % Definir u
-u = @(t) 1; % u Caso 1
+% u = @(t) 1; % u Caso 1
 % u = @(t) t; % u Caso 2
-% u = @(t) sin(t); % u Caso 3
+u = @(t) sin(t); % u Caso 3
 
 % EDO
 f = @(t,X) A*[X(1), X(2)]' + B*u(t);
