@@ -40,7 +40,7 @@ title('Solución con u constante (u(t)=-5)')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_1.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_1.png')
 
 [t,x] = ode45(f2,T,X0);
 
@@ -50,7 +50,7 @@ title('Solución con u lineal (u(t)=t)')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_2.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_2.png')
 
 [t,x] = ode45(f3,T,X0);
 
@@ -60,7 +60,7 @@ title('Solución con u tipo Sinusoidal (u(t)=sin(t))')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_3.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_3.png')
 
 [t,x] = ode45(f4,T,X0);
 
@@ -70,7 +70,7 @@ title('Solución con u tipo Bang-Bang (u(t)=5*(t>5))')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_4.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_4.png')
 
 [t,x] = ode45(f5,T,X0);
 
@@ -80,7 +80,7 @@ title('Solución con u tipo Feedback')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_5.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_5.png')
 
 clear f1 f2 f3 f4 f5 x t K
 
@@ -149,7 +149,7 @@ title('Solución con u tipo Feedback usando place')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej6_1.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej6_1.png')
 
 [t,x] = ode45(f7,T,X0);
 
@@ -159,7 +159,7 @@ title('Solución con u tipo Feedback usando lqr')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej6_2.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej6_2.png')
 
 clear f6 f7 x t
 %% Ejercicio 7
@@ -194,7 +194,7 @@ title('Solución x con control constante')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_1.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_1.png')
 
 plot3(x(:,5),x(:,7),t)
 grid on
@@ -202,7 +202,7 @@ title('Solución a x gorro con control constante')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_2.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_2.png')
 
 
 [t,x] = ode45(h2,T,X1);
@@ -213,7 +213,7 @@ title('Solución x con control lineal')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_3.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_3.png')
 
 plot3(x(:,5),x(:,7),t)
 grid on
@@ -221,7 +221,7 @@ title('Solución a x gorro con control lineal')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_4.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_4.png')
 
 
 [t,x] = ode45(h3,T,X1);
@@ -232,7 +232,7 @@ title('Solución x con control sinusoidal')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_5.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_5.png')
 
 plot3(x(:,5),x(:,7),t)
 grid on
@@ -240,7 +240,7 @@ title('Solución a x gorro con control sinusoidal')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_6.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_6.png')
 
 [t,x] = ode45(h4,T,X1);
 
@@ -250,7 +250,7 @@ title('Solución x con control Bang Bang')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_7.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_7.png')
 
 plot3(x(:,5),x(:,7),t)
 grid on
@@ -258,7 +258,7 @@ title('Solución a x gorro con control Bang Bang')
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_8.png')
+saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_8.png')
 
 clear h1 h2 h3 h4 u1 u2 u3 u4
 
