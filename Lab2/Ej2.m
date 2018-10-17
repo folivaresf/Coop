@@ -1,4 +1,4 @@
-
+clear clc
 %% 
 % constantes
 n = 4;
@@ -16,7 +16,7 @@ B = [0 1/M 0 -1/M]';
 T = [0 10];
 X0 = [0 0 1 0];
 
-clear m M g f l
+clear m M g f l;
 %% Ejercicio 2
 % controles
 u1 = @(t) -5; % constante
@@ -34,55 +34,130 @@ f5 = @(t,X) (A-B*K)*[X(1), X(2), X(3), X(4)]' ; %Feedback
 
 [t,x] = ode45(f1,T,X0);
 
-plot3(x(:,1),x(:,3),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución con u constante','u(t)=-5'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_01.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución con u constante','u(t)=-5'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_02.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución con u constante (u(t)=-5)')
+title({'Solución con u constante','u(t)=-5'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_1.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_03.png')
 
 [t,x] = ode45(f2,T,X0);
 
-plot3(x(:,1),x(:,3),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución con u lineal','u(t)=t'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_04.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución con u lineal','u(t)=t'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_05.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución con u lineal (u(t)=t)')
+title({'Solución con u lineal','u(t)=t'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_2.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_06.png')
 
 [t,x] = ode45(f3,T,X0);
 
-plot3(x(:,1),x(:,3),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución con u sinusoidal','u(t)=sin(t)'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_07.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución con u sinusoidal','u(t)=sin(t)'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_08.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución con u tipo Sinusoidal (u(t)=sin(t))')
+title({'Solución con u sinusoidal','u(t)=sin(t)'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_3.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_09.png')
 
 [t,x] = ode45(f4,T,X0);
 
-plot3(x(:,1),x(:,3),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución con u Bang-Bang','u(t)=5*(t>5)'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_10.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución con u Bang-Bang','u(t)=5*(t>5)'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_11.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución con u tipo Bang-Bang (u(t)=5*(t>5))')
+title({'Solución con u Bang-Bang','u(t)=5*(t>5)'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_4.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_12.png')
 
 [t,x] = ode45(f5,T,X0);
 
-plot3(x(:,1),x(:,3),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_13.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_14.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución con u tipo Feedback')
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej2_5.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej2_15.png')
 
-clear f1 f2 f3 f4 f5 x t K
+clear f1 f2 f3 f4 f5 x t K;
 
 %% Ejercicio 3
 %X0 = [0 ]
@@ -92,18 +167,18 @@ KAB2 = round(ctrb(A,B),4);
 
 if sum(sum(KAB1 == KAB2))==16; disp("La matriz de Kalman calculada y la de la función 'ctrb' son iguales"); end
 
-clear KAB1 KAB2
+clear KAB1 KAB2;
 %% Ejercicio 4
 
 % y = (x1 x3) = C*X
-C = [1 0 0 0; 0 1 0 0];
+C = [1 0 0 0; 0 0 1 0];
 
 O1 = round([C ; C*A ; C*A^2; C*A^3],4);
 O2 = round(obsv(A,C),4);
 
-if sum(sum(O1 == O2))==16; disp("La matriz de observación calculada y la de la función 'obsv' son iguales"); end
+if sum(sum(O1 == O2))==32; disp("La matriz de observación calculada y la de la función 'obsv' son iguales"); end
 
-clear O1 O2
+clear O1 O2;
 %% Ejercicio 5
 
 p = poly(A);
@@ -120,7 +195,7 @@ B2 = round(canon.A',4);
 
 if sum(sum(B1 == B2))==16; disp("La matriz de Brunovski calculada y la de la función 'canon' son iguales"); end
 
-clear p a D B1 B2 sys canon
+clear p a D B1 B2 sys canon;
 %% Ejercicio 6
 p  = [-1 -2 -3 -4]';
 K1 = place(A,B,p);
@@ -143,23 +218,53 @@ f7 = @(t,X) (A-B*K2)*[X(1), X(2), X(3), X(4)]' ; %Feedback1
 
 [t,x] = ode45(f6,T,X0);
 
-plot3(x(:,1),x(:,3),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando place'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej6_01.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando place'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej6_02.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución con u tipo Feedback usando place')
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando place'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej6_1.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej6_03.png')
 
 [t,x] = ode45(f7,T,X0);
 
-plot3(x(:,1),x(:,3),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando lqr'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej6_04.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando lqr'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej6_05.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución con u tipo Feedback usando lqr')
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando lqr'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej6_2.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej6_06.png')
 
 clear f6 f7 x t
 %% Ejercicio 7
@@ -188,77 +293,211 @@ X1 = [0 1 1 0 1000 4 4 1];
 
 [t,x] = ode45(h1,T,X1);
 
-plot3(x(:,1),x(:,3),t)
-grid on
-title('Solución x con control constante')
-xlabel('x(t)')
-ylabel('\theta(t)')
-zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_1.png')
+% x constante
 
-plot3(x(:,5),x(:,7),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución de x con','u constante, u(t)=-5'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_01.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución de \theta con','u constante, u(t)=-5'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_02.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución a x gorro con control constante')
+title({'Solución de (x,\theta) con','u constante, u(t)=-5'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_2.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_03.png')
+
+% x gorro constante
+
+plot(t,x(:,5),'LineWidth',3)
+title({'Solución de x gorro con','u constante, u(t)=-5'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_04.png')
+
+plot(t,x(:,7),'LineWidth',3)
+title({'Solución de \theta gorro con','u constante, u(t)=-5'})
+ylabel('\theta(t)')
+xlabel('t')
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_05.png')
+
+plot3(x(:,5),x(:,7),t,'LineWidth',3)
+grid on
+title({'Solución de (x,\theta) gorro con','u constante, u(t)=-5'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_6.png')
 
 
 [t,x] = ode45(h2,T,X1);
 
-plot3(x(:,1),x(:,3),t)
+%  x lineal
+
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución de x con','u lineal, u(t)=t'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_07.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución de \theta con','u lineal, u(t)=t'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_08.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución x con control lineal')
+title({'Solución de (x,\theta) con','u lineal, u(t)=t'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_3.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_09.png')
 
-plot3(x(:,5),x(:,7),t)
+% x gorro lineal
+
+plot(t,x(:,5),'LineWidth',3)
+title({'Solución de x gorro con','u lineal, u(t)=t'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_10.png')
+
+plot(t,x(:,7),'LineWidth',3)
+title({'Solución de \theta gorro con','u lineal, u(t)=t'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_11.png')
+
+plot3(x(:,5),x(:,7),t,'LineWidth',3)
 grid on
-title('Solución a x gorro con control lineal')
+title({'Solución de (x,\theta) gorro con','u lineal, u(t)=t'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_4.png')
-
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_12.png')
 
 [t,x] = ode45(h3,T,X1);
 
-plot3(x(:,1),x(:,3),t)
-grid on
-title('Solución x con control sinusoidal')
-xlabel('x(t)')
-ylabel('\theta(t)')
-zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_5.png')
+% x sinusoidal
 
-plot3(x(:,5),x(:,7),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución de x con','u sinusoidal, u(t)=sin(t)'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_13.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución de \theta con','u sinusoidal, u(t)=sin(t)'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_14.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución a x gorro con control sinusoidal')
+title({'Solución de (x,\theta) con','u sinusoidal, u(t)=sin(t)'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_6.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_15.png')
+
+%X gorro sinusoidal
+
+plot(t,x(:,5),'LineWidth',3)
+title({'Solución de x gorro con','u sinusoidal, u(t)=sin(t)'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_16.png')
+
+plot(t,x(:,7),'LineWidth',3)
+title({'Solución de \theta gorro con','u sinusoidal, u(t)=sin(t)'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_17.png')
+
+plot3(x(:,5),x(:,7),t,'LineWidth',3)
+grid on
+title({'Solución de (x,\theta) gorro con','u sinusoidal, u(t)=sin(t)'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_18.png')
 
 [t,x] = ode45(h4,T,X1);
 
-plot3(x(:,1),x(:,3),t)
-grid on
-title('Solución x con control Bang Bang')
-xlabel('x(t)')
-ylabel('\theta(t)')
-zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_7.png')
+% x bang bang
 
-plot3(x(:,5),x(:,7),t)
+plot(t,x(:,1),'LineWidth',3)
+title({'Solución de x con','u Bang-Bang, u(t)=5*(t>5)'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_19.png')
+
+plot(t,x(:,3),'LineWidth',3)
+title({'Solución de \theta con','u Bang-Bang, u(t)=5*(t>5)'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_20.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución a x gorro con control Bang Bang')
+title({'Solución de (x,\theta) con','u Bang-Bang, u(t)=5*(t>5)'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
-saveas(gcf,'C:\Users\Felipe\Documents\GitHub\Coop\Lab2\ej7_8.png')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_21.png')
+
+%x gorro bang bang
+
+plot(t,x(:,5),'LineWidth',3)
+title({'Solución de x gorro con','u Bang-Bang, u(t)=5*(t>5)'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_22.png')
+
+plot(t,x(:,7),'LineWidth',3)
+title({'Solución de \theta gorro con','u Bang-Bang, u(t)=5*(t>5)'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_23.png')
+
+plot3(x(:,5),x(:,7),t,'LineWidth',3)
+grid on
+title({'Solución de (x,\theta) gorro con','u Bang-Bang, u(t)=5*(t>5)'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej7_24.png')
 
 clear h1 h2 h3 h4 u1 u2 u3 u4
 
@@ -266,44 +505,144 @@ clear h1 h2 h3 h4 u1 u2 u3 u4
 
 %D = B*K1;
 
-T=[0 40];
-X1 =[0 1 1 0 1000 400 4 1];
+T=[0 20];
+X1 = [0 1 1 0 1000 4 4 1];
 
+% con Luenberger
 g1 = @(t,X) [A*[X(1), X(2), X(3), X(4)]' - B*K1*[X(5),X(6),X(7),X(8)]';...
              A*[X(5), X(6), X(7), X(8)]' - B*K1*[X(5),X(6),X(7),X(8)]' + L*(C*[X(5),X(6),X(7),X(8)]' - C*[X(1),X(2),X(3),X(4)]')];
 
 g2 = @(t,X) [A*[X(1), X(2), X(3), X(4)]' - B*K2*[X(5),X(6),X(7),X(8)]';...
              A*[X(5), X(6), X(7), X(8)]' - B*K2*[X(5),X(6),X(7),X(8)]' + L*(C*[X(5),X(6),X(7),X(8)]' - C*[X(1),X(2),X(3),X(4)]')];
-         
+
 [t,x] = ode45(g1,T,X1);
 
 hold on
-plot(t,x(:,1))
-plot(t,x(:,5))
+plot(t(1:100),x(1:100,1),'LineWidth',3)
+plot(t(1:100),x(1:100,5),'LineWidth',3)
+title({'Solución de x y x gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('t')
+ylabel('x(t)')
+set(gca,'fontsize',13)
 hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_01.png')
 
-plot3(x(:,1),x(:,3),t)
+hold on
+plot(t,x(:,1),'LineWidth',3)
+plot(t,x(:,5),'LineWidth',3)
+title({'Solución de x y x gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('t')
+ylabel('x(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_02.png')
+
+hold on
+plot(t(1:120),x(1:120,3),'LineWidth',3)
+plot(t(1:120),x(1:120,7),'LineWidth',3)
+title({'Solución de \theta y \theta gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('t')
+ylabel('\theta(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_03.png')
+
+hold on
+plot(t,x(:,3),'LineWidth',3)
+plot(t,x(:,7),'LineWidth',3)
+ylabel('\theta(t)')
+title({'Solución de \theta y \theta gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('t')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_04.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
 grid on
-title('Solución a x con control Feedback')
+title({'Solución de (x,\theta) con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_05.png')
 
-plot3(x(:,5),x(:,7),t)
+plot3(x(:,5),x(:,7),t,'LineWidth',3)
 grid on
-title('Solución a x gorro con control Feedback')
+title({'Solución de (x,\theta) gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_06.png')
 
+[t,x] = ode45(g2,T,X1);
 
+hold on
+plot(t(1:100),x(1:100,1),'LineWidth',3)
+plot(t(1:100),x(1:100,5),'LineWidth',3)
+title({'Solución de x y x gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('t')
+ylabel('x(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_07.png')
+
+hold on
+plot(t,x(:,1),'LineWidth',3)
+plot(t,x(:,5),'LineWidth',3)
+title({'Solución de x y x gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('t')
+ylabel('x(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_08.png')
+
+hold on
+plot(t(1:120),x(1:120,3),'LineWidth',3)
+plot(t(1:120),x(1:120,7),'LineWidth',3)
+title({'Solución de \theta y \theta gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('t')
+ylabel('\theta(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_09.png')
+
+hold on
+plot(t,x(:,3),'LineWidth',3)
+plot(t,x(:,7),'LineWidth',3)
+ylabel('\theta(t)')
+title({'Solución de \theta y \theta gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+ylabel('t')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_10.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',3)
+grid on
+title({'Solución de (x,\theta) con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_11.png')
+
+plot3(x(:,5),x(:,7),t,'LineWidth',3)
+grid on
+title({'Solución de (x,\theta) gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej8_12.png')
+
+clear g1 g2
 %% Ejercicio 9
 M = 2.4;
 m = 0.23;
 g = 9.8;
 f = 0.1;
 l = 0.36;
-T = [0 10];
+T = [0 40];
 
 % X(1)  = x
 % X(2)  = x'
@@ -316,33 +655,220 @@ f3 = @(x,y) (M+m)*(g*sin(x)-f*y) - m*l*y^2*sin(x)*cos(x);
 u1  = @(x,y,z,w) K1*[x, y, z, w]';
 u2  = @(x,y,z,w) K2*[x, y, z, w]';
 
-g3 = @(t,X) [ X(2)                                                               ;...
+% sin luemberger
+
+g1 = @(t,X) [ X(2)                                                               ;...
              (f1(X(3),X(4))+ u1(X(1), X(2), X(3), X(4)))/(f2(X(3))  )            ;...
               X(4)                                                               ;...
              (f3(X(3),X(4))+ u1(X(1), X(2), X(3), X(4))*cos(X(3)))/(f2(X(3))*l)] ;
 
-g4 = @(t,X) [ X(2)                                                               ;...
+g2 = @(t,X) [ X(2)                                                               ;...
              (f1(X(3),X(4))+ u2(X(1), X(2), X(3), X(4)))/(f2(X(3))  )            ;...
               X(4)                                                               ;...
              (f3(X(3),X(4))+ u2(X(1), X(2), X(3), X(4))*cos(X(3)))/(f2(X(3))*l)] ;
 
-[t,x] = ode45(g3,T,X0);
+% con luenberger
+LL = L*C;
 
-plot3(x(:,1),x(:,3),t)
+g3 = @(t,X) [ X(2)                                                               ;...
+             (f1(X(3),X(4))+ u1(X(5), X(6), X(7), X(8)))/(f2(X(3))  )            ;...
+              X(4)                                                               ;...
+             (f3(X(3),X(4))+ u1(X(5), X(6), X(7), X(8))*cos(X(3)))/(f2(X(3))*l)  ;...
+             ((X(6))                                                               +(LL(1,:)*([X(5),X(6),X(7),X(8)]' - [X(1),X(2),X(3),X(4)]')));...
+             (((f1(X(7),X(8))+ u1(X(5), X(6), X(7), X(8)))/(f2(X(7))  ) )           +(LL(2,:)*([X(5),X(6),X(7),X(8)]' - [X(1),X(2),X(3),X(4)]')));...
+             ((X(8))                                                               +(LL(3,:)*([X(5),X(6),X(7),X(8)]' - [X(1),X(2),X(3),X(4)]')));...
+             (((f3(X(7),X(8))+ u1(X(5), X(6), X(7), X(8))*cos(X(7)))/(f2(X(7))*l)) + (LL(4,:)*([X(5),X(6),X(7),X(8)]' - [X(1),X(2),X(3),X(4)]'))) ];
+         
+g4 = @(t,X) [ X(2)                                                               ;...
+             (f1(X(3),X(4))+ u2(X(5), X(6), X(7), X(8)))/(f2(X(3))  )            ;...
+              X(4)                                                               ;...
+             (f3(X(3),X(4))+ u2(X(5), X(6), X(7), X(8))*cos(X(3)))/(f2(X(3))*l)  ;...
+             ((X(6)                                                             ) +(LL(1,:)*([X(5),X(6),X(7),X(8)]' - [X(1),X(2),X(3),X(4)]')));...
+             (((f1(X(7),X(8))+ u2(X(5), X(6), X(7), X(8))          )/(f2(X(7))  ))+(LL(2,:)*([X(5),X(6),X(7),X(8)]' - [X(1),X(2),X(3),X(4)]')));...
+             ((X(8)                                                             ) +(LL(3,:)*([X(5),X(6),X(7),X(8)]' - [X(1),X(2),X(3),X(4)]')));...
+             (((f3(X(7),X(8))+ u2(X(5), X(6), X(7), X(8))*cos(X(7)))/(f2(X(7))*l))+(LL(4,:)*([X(5),X(6),X(7),X(8)]' - [X(1),X(2),X(3),X(4)]')))];
+         
+%[t,x] = ode45(g1,T,X0);
+%[t,x] = ode45(g2,T,X0);
+         
+%[t,x] = ode45(g3,T,X1);
+
+%% GRAFICOS FINALES DE G1 Y G2
+X0 = [0 1 1 0];
+%X0= [0 1 0.1 0];
+[t,x] = ode45(g1,T,X0);
+
+plot(t,x(:,1),'LineWidth',2)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando place'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_01.png')
+
+plot(t,x(:,3),'LineWidth',2)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando place'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_02.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',1)
 grid on
-title('Solución a x con control Feedback')
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando place'})
 xlabel('x(t)')
 ylabel('\theta(t)')
 zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_03.png')
+
+[t,x] = ode45(g2,T,X0);
+
+plot(t,x(:,1),'LineWidth',2)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando lqr'})
+ylabel('x(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_04.png')
+
+plot(t,x(:,3),'LineWidth',2)
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando lqr'})
+ylabel('\theta(t)')
+xlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_05.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',1)
+grid on
+title({'Solución con u Feedback lineal','u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_06.png')
+
+%% GRAFICOS FINALES DE G3 Y G4
+%X1 = [0 1 0.1 0 1 0.5 0.1 0.1];
+X1 = [0 1 1 0 1000 4 4 1];
+[t,x] = ode45(g3,T,X1);
+
+hold on
+plot(t(1:400),x(1:400,1),'LineWidth',1)
+plot(t(1:400),x(1:400,5),'LineWidth',1)
+title({'Solución de x y x gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('t')
+ylabel('x(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_07.png')
+
+hold on
+plot(t,x(:,1),'LineWidth',1)
+plot(t,x(:,5),'LineWidth',1)
+title({'Solución de x y x gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('t')
+ylabel('x(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_08.png')
+
+hold on
+plot(t(1:1000),x(1:1000,3),'LineWidth',1)
+plot(t(1:1000),x(1:1000,7),'LineWidth',1)
+title({'Solución de \theta y \theta gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('t')
+ylabel('\theta(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_09.png')
+
+hold on
+plot(t,x(:,3),'LineWidth',1)
+plot(t,x(:,7),'LineWidth',1)
+ylabel('\theta(t)')
+title({'Solución de \theta y \theta gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('t')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_10.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',1)
+grid on
+title({'Solución de (x,\theta) con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_11.png')
+
+plot3(x(:,5),x(:,7),t,'LineWidth',1)
+grid on
+title({'Solución de (x,\theta) gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando place'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_12.png')
+
+[t,x] = ode45(g4,T,X1);
+
+hold on
+plot(t(1:500),x(1:500,1),'LineWidth',1)
+plot(t(1:500),x(1:500,5),'LineWidth',1)
+title({'Solución de x y x gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('t')
+ylabel('x(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_13.png')
+
+hold on
+plot(t,x(:,1),'LineWidth',1)
+plot(t,x(:,5),'LineWidth',1)
+title({'Solución de x y x gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('t')
+ylabel('x(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_14.png')
+
+hold on
+plot(t(1:1000),x(1:1000,3),'LineWidth',1)
+plot(t(1:1000),x(1:1000,7),'LineWidth',1)
+title({'Solución de \theta y \theta gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('t')
+ylabel('\theta(t)')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_15.png')
+
+hold on
+plot(t,x(:,3),'LineWidth',1)
+plot(t,x(:,7),'LineWidth',1)
+ylabel('\theta(t)')
+title({'Solución de \theta y \theta gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+ylabel('t')
+set(gca,'fontsize',13)
+hold off
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_16.png')
+
+plot3(x(:,1),x(:,3),t,'LineWidth',1)
+grid on
+title({'Solución de (x,\theta) con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_17.png')
+
+plot3(x(:,5),x(:,7),t,'LineWidth',1)
+grid on
+title({'Solución de (x,\theta) gorro con','u Feedback, u(t)=-Kx(t)','obtenido usando lqr'})
+xlabel('x(t)')
+ylabel('\theta(t)')
+zlabel('t')
+set(gca,'fontsize',13)
+saveas(gcf,'C:\Users\usuario\Desktop\Control óptimo\Lab 2\ej9_18.png')
 
 
 %% weás que no apañaron
 
-% [V] = odeToVectorField(diff(x1,t) == (x2                                     -  D(1,:)*[z1 z2 z3 z4]'),...
-%                        diff(x2,t) == (-m*g/M*x3 + f*m/M*x4                   -  D(2,:)*[z1 z2 z3 z4]'),...
-%                        diff(x3,t) == (x4                                     -  D(3,:)*[z1 z2 z3 z4]'),...
-%                        diff(x4,t) == ( -(m+M)*g/(M*l)*x3 + f*(m+M)/(M*l)*x4  -  D(4,:)*[z1 z2 z3 z4]'),...
-%                        diff(z1,t) == (z2                                     -  D(1,:)*[z1 z2 z3 z4]' + L(1,:)*[z1-x1; z3-x3]),...
-%                        diff(z2,t) == (-m*g/M*z3 + f*m/M*z4                   -  D(2,:)*[z1 z2 z3 z4]' + L(2,:)*[z1-x1; z3-x3]),...
-%                        diff(z3,t) == (z4                                     -  D(3,:)*[z1 z2 z3 z4]' + L(3,:)*[z1-x1; z3-x3]),...
-%                        diff(z4,t) == ( -(m+M)*g/(M*l)*z3 + f*(m+M)/(M*l)*z4  -  D(4,:)*[z1 z2 z3 z4]' + L(4,:)*[z1-x1; z3-x3]) );
