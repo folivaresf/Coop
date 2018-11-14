@@ -1,0 +1,4 @@
+/home/darkestyle/Downloads/Bocop-2.1.0-linux-src/examples/Lab4PB/build/CMakeFiles/rebuild_cache.dir
+/home/darkestyle/Downloads/Bocop-2.1.0-linux-src/examples/Lab4PB/build/CMakeFiles/edit_cache.dir
+/home/darkestyle/Downloads/Bocop-2.1.0-linux-src/examples/Lab4PB/build/CMakeFiles/bocopcore.dir
+/home/darkestyle/Downloads/Bocop-2.1.0-linux-src/examples/Lab4PB/build/CMakeFiles/bocop.dir
