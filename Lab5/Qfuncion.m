@@ -5,8 +5,11 @@ vmin = -1;
 xmax = 1;
 vmax = 1;
 
-hx = 0.01;
-hv = 0.01;
+% hx = 0.01;
+% hv = 0.01;
+
+hx = 1;
+hv = 1;
 
 nx = (xmax - xmin)/hx;
 nv = (vmax - vmin)/hv;
